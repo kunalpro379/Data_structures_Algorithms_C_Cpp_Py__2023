@@ -33,8 +33,8 @@ public:
 int main() {
    // TreeNode* root;
 
-    Solution solution; // Create an instance of the Solution class
-    TreeNode* root = new TreeNode(1); // Create a sample binary tree
+    Solution solution;
+    TreeNode* root = new TreeNode(1); 
     root->left = new TreeNode(2);
     root->right = new TreeNode(3);
     root->left->left = new TreeNode(4);
@@ -43,12 +43,12 @@ int main() {
     vector<int> result;
     solution.inorderTraversal(root);
 
-    // Now, 'result' contains the in-order traversal of the binary tree
+  
     for (int val : result) {
         cout << val << " ";
     }
 
-    // Don't forget to free the memory allocated for the tree nodes
+    
     delete root->left->right;
     delete root->left->left;
     delete root->right;

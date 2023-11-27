@@ -68,22 +68,8 @@ public:
         return searchUtil(root, word);
     }
 
-    // Optional: Print all words in the Trie
-    void printAllWords(TrieNodes* root, string current) {
-        if (root->isTerminal) {
-            cout << current << endl;
-        }
-
-        for (int i = 0; i < 26; i++) {
-            if (root->children[i] != nullptr) {
-                printAllWords(root->children[i], current + char('A' + i));
-            }
-        }
-    }
-
-    void printAllWords() {
-        printAllWords(root, "");
-    }
+  
+ 
 
     // Destructor to free allocated memory
     ~Trie() {

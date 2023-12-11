@@ -5,31 +5,25 @@ int main() {
     int rows = 3;
     int cols = 4;
 
-    // Declare a double pointer to int
-    int** matrix;
+    int** mat;
 
-    // Allocate memory for the rows (an array of int pointers)
-    matrix = (int**)malloc(rows * sizeof(int*));
+    mat = (int**)malloc(rows * sizeof(int*));
 
-    // Check if memory allocation was successful
-    if (matrix == NULL) {
-        printf("Memory allocation failed.\n");
+    if (mat == NULL) {
+  
         return 1;
     }
 
-    // Allocate memory for each row (an array of ints)
     for (int i = 0; i < rows; i++) {
-        matrix[i] = (int*)malloc(cols * sizeof(int));
+        mat[i] = (int*)malloc(cols * sizeof(int));
 
-        // Check if memory allocation was successful
-        if (matrix[i] == NULL) {
-            printf("Memory allocation failed.\n");
+        if (mat[i] == NULL) {
+      
 
-            // Free previously allocated memory
             for (int j = 0; j < i; j++) {
-                free(matrix[j]);
+                free(mat[j]);
             }
-            free(matrix);
+            free(mat);
 
             return 1;
         }
@@ -39,17 +33,17 @@ int main() {
     int count = 1;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            matrix[i][j] = count++;
-            printf("%3d ", matrix[i][j]);
+            mat[i][j] = count++;
+            printf("%3d ", mat[i][j]);
         }
         printf("\n");
     }
 
-    // Deallocate the memory for the 2D array
+
     for (int i = 0; i < rows; i++) {
-        free(matrix[i]);
+        free(mat[i]);
     }
-    free(matrix);
+    free(mat);
 
     return 0;
 }

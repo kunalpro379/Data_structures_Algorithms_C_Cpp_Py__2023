@@ -50,4 +50,44 @@ int main() {
     }
 
     cout << endl;
+
+cout<<endl<<endl<<"max heap"<<endl<<endl;
+    //maxheap
+    priority_queue<int>PQ;
+    PQ.push(3);
+    PQ.push(5);
+    PQ.push(8);
+    PQ.push(1);
+    PQ.push(11);
+    PQ.push(6);
+cout<<"Element at Top"<<endl<<PQ.top()<<endl;
+PQ.pop();
+cout<<"Element at Top"<<endl<<PQ.top()<<endl;
+cout<<"SIZE :"<<endl<<PQ.size()<<endl;
+if(PQ.empty())
+cout<<"PQ is Emptyp"<<endl;
+
+else 
+cout<<"PQ IS NOT EMPTY"<<endl;
+
+
+cout<<endl<<endl<<"min heap"<<endl<<endl;
+//min heap
+priority_queue<int, vector<int>,greater<int>>minheap;
+minheap.push(2);
+minheap.push(8);
+minheap.push(3);
+minheap.push(5);
+minheap.push(4);
+minheap.push(7);
+cout<<"Element at Top"<<endl<<minheap.top()<<endl;
+minheap.pop();
+cout<<"Element at Top"<<endl<<minheap.top()<<endl;
+cout<<"SIZE :"<<endl<<minheap.size()<<endl;
+if(minheap.empty())
+cout<<"minheap is Emptyp"<<endl;
+
+else 
+cout<<"PQ IS NOT EMPTY"<<endl;
+
 }

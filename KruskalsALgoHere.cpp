@@ -9,7 +9,7 @@ public:
     int V; 
     vector<pair<int, pair<int, int>>> edges; // (weight, (vertex1, vertex2))
 
-    Graph(int vertices)  {vertices=V;}
+    Graph(int vertices)  {V=vertices;}
 
     void addEdge(int u, int v, int w) {
         edges.push_back({w, {u, v}});
@@ -48,7 +48,14 @@ while(result.size()<V-1){//continue untill V-1 edges are added int the reuslt
 int u=edges[i].second.first;//first vertex of the current edge
 int v=edges[i].second.second;//second vertex of the current edge
 int w=edges[i].first;//weight of the current edge
-i++;//increasing the index of the edge
+i++;//next edge
+int rootU=findParents(parent,u);//finding the root of the set containing vertex u
+int rootV=findParents(parent,v);//finding the root of the set containing vertex v
+//now cheak if adding of current edge creates a cycle or not i.e vertex u and v arent in same set
+if(rootU!=rootV){
+    result.push_back({w,{u,v}});//if they are not in same set then add the current edge in the result
+    UnionSet(parent,rank,rootU,rootV);//merge the two sets
+}
 }
 return result;
 }

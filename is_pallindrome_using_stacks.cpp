@@ -134,9 +134,9 @@ int mid=size/2;
 if (c==0){
     cout<<"string isnt pallindrome";
 }
-if(c==1)
+if(c==1){
     cout<<"string is a pallindrome";
-    
+}
 
     // int p = s.getsize();
     // cout << "Stack size: " << p << endl;

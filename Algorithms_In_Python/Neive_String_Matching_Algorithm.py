@@ -8,7 +8,6 @@
 #complexity O(m*(n-1))
 #n- len of text  m- len of pattern
 
-
 def search(pat, txt):
     m=len(pat)
     n=len(txt)

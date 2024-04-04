@@ -1,7 +1,8 @@
 
 
 # n rani code in backtracking
-#
+##backtracking 
+
 
 def N_RANI_UTIL(board ,col):
     #i f all quens are placed then return true

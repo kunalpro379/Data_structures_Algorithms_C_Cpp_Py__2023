@@ -1,14 +1,13 @@
-def SelectionSort(arr):
-    n=len(arr)
-    for i in range(n):
-        minInd=i
-        for j in range(i+1,n):
-            if arr[j]<arr[minInd]:
-                minInd=j
-        arr[i],arr[minInd]=arr[minInd],arr[i]
-    return arr
+def QuickSort(arr):
+    if len(arr)<=1:
+        return arr
+    else:
+        pivot=arr[0]
+        left=[x for x in arr[1:] if x<=pivot]
+        right=[x for x in arr[1:] if x>pivot]
+        return QuickSort(left)+[pivot]+QuickSort(right)
 
 if __name__ == "__main__":
-    arr = [64, 25, 12, 22, 11]
-    sorted_arr = SelectionSort(arr)
+    arr = [10, 7, 8, 9, 1, 5]
+    sorted_arr = QuickSort(arr)
     print("Sorted array:", sorted_arr)

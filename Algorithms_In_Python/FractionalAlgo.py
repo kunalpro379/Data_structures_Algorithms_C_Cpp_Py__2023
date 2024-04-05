@@ -9,7 +9,7 @@ def FractionalKnapSack(weights,vals,capacity):
             totalvalue+=vals*weights
             remainingcapacity-=weights
         else:
-            totalvalue+=vals*remainingcapacity
+            totalvalue+=vals*valuesperweight
             remainingcapacity=0
             break
     return totalvalue
